@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Nature Music</title>
+    <link rel="shortcut icon" href="./icon/icon.png">
+    <link rel="bookmark" href="./icon/icon.png">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<audio></audio>
+<div class="player">
+    <div class="controller">
+        <div class="progress">
+            <div class="pro-inner"></div>
+        </div>
+        <div class="controlPanel">
+            <div class="logo">Nature</div>
+            <div class="control">
+                <div class="btn iconfont pre">&#xea9f;</div>
+                <div class="btn iconfont play">&#xe9d3;</div>
+                <div class="btn iconfont next">&#xea9e;</div>
+                <div class="btn iconfont loop">&#xeb28;</div>
+            </div>
+            <div class="lrc">Music...</div>
+            <div class="time">-00:00</div>
+            <div class="search">
+                <input type="text" placeholder="搜索" class="searchKey">
+                <span class="searchBtn iconfont">&#xe600;</span>
+            </div>
+            <div class="listSwitch iconfont">&#xe659;</div>
+        </div>
+    </div>
+    <div class="content">
+        <ul class="searchResult"></ul>
+        <ul class="playlist"></ul>
+    </div>
+</div>
+<script src="./javascripts/bmob-min.js"></script>
+<script src="./javascripts/jquery.js"></script>
+<script src="./javascripts/layer.js"></script>
+<script src="./javascripts/Player.js"></script>
+</body>
+</html>
