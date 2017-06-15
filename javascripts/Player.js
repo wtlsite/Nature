@@ -42,15 +42,15 @@
                     _this.audio.currentTime -= (_this.audio.duration * 0.01);
                     break;
                 case 38 : //音量+
-                    if(_this.audio.volume<1) _this.audio.volume += 0.25;
-                    layer.msg('音量：'+parseInt(_this.audio.volume*100)+'%');
+                    if (_this.audio.volume < 1) _this.audio.volume += 0.25;
+                    layer.msg('音量：' + parseInt(_this.audio.volume * 100) + '%');
                     break;
                 case 39 : //快进
                     _this.audio.currentTime += (_this.audio.duration * 0.01);
                     break;
                 case 40 : //音量-
-                    if(_this.audio.volume>0) _this.audio.volume -= 0.25;
-                    layer.msg('音量：'+parseInt(_this.audio.volume*100)+'%');
+                    if (_this.audio.volume > 0) _this.audio.volume -= 0.25;
+                    layer.msg('音量：' + parseInt(_this.audio.volume * 100) + '%');
                     break;
             }
         });
@@ -102,15 +102,15 @@
             _this.playPause();
         });
 
-        this.listSwitch.addEventListener('click',function () {
-            if(_this.playlistState==='show'){
+        this.listSwitch.addEventListener('click', function () {
+            if (_this.playlistState === 'show') {
                 _this.playlistContainer.style.right = '-249px';
                 _this.searchResultBox.style.marginRight = '0';
-                _this.playlistState='hidden'
-            }else{
+                _this.playlistState = 'hidden'
+            } else {
                 _this.playlistContainer.style.right = '0';
                 _this.searchResultBox.style.marginRight = '251px';
-                _this.playlistState='show'
+                _this.playlistState = 'show'
             }
         });
 
@@ -206,7 +206,9 @@
             song.setAttribute('class', 'list-song');
             singer.setAttribute('class', 'list-singer');
             close.setAttribute('class', 'iconfont close');
-            box.append(song, singer, close);
+            box.appendChild(song);
+            box.appendChild(singer);
+            box.appendChild(close);
             _this.playlistContainer.appendChild(box);
         });
     };
@@ -265,8 +267,12 @@
             name.setAttribute('class', 'search_song');
             singer.innerHTML = song.singer;
             singer.setAttribute('class', 'search_singer');
-            opt.append(play, add);
-            content.append(opt, img, name, singer);
+            opt.appendChild(play);
+            opt.appendChild(add);
+            content.appendChild(opt);
+            content.appendChild(img);
+            content.appendChild(name);
+            content.appendChild(singer);
             _this.searchResultBox.appendChild(content)
         });
     };
@@ -376,19 +382,19 @@
         for (var j = 0; j < len; j++) {
             this.playlistContainer.children[j].removeAttribute('class');
         }
-        this.playlistContainer.children[num].setAttribute('class','playing');
+        this.playlistContainer.children[num].setAttribute('class', 'playing');
     };
     layer.open({
-        title:'Nature Music通知',
-        content:'本播放器内容来自网易云音乐，仅供学习使用。部分内容已隐藏，如有需要请前往网易云音乐。',
-        closeBtn:0,
-        btn:['我知道了','离开'],
-        yes:function () {
+        title: 'Nature Music通知',
+        content: '本播放器内容来自网易云音乐，仅供学习使用。部分内容已隐藏，如有需要请前往网易云音乐。',
+        closeBtn: 0,
+        btn: ['我知道了', '离开'],
+        yes: function () {
             Bmob.initialize("22e84dbe507a583ba7d037d3603aa4be", "09a6501fabeb11218fe31b28317d8682");
-            var player = new Player(),list =['玖月奇迹','郑源','唱响中国','姚贝娜','邓紫棋','金玟岐','Coldplay','F.I.R'];
-            player.search(list[Math.floor(Math.random()*list.length)]);
+            var player = new Player(), list = ['玖月奇迹', '郑源', '唱响中国', '姚贝娜', '邓紫棋', '金玟岐', 'Coldplay', 'F.I.R'];
+            player.search(list[Math.floor(Math.random() * list.length)]);
         },
-        btn2:function () {
+        btn2: function () {
             window.close();
         }
     });
