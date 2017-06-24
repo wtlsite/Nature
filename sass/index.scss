@@ -1,4 +1,5 @@
 $back: rgba(0, 0, 0, .2);
+$barColor : #019dfb;
 * {
   padding: 0;
   margin: 0;
@@ -60,11 +61,11 @@ body {
     height: 5px;
     bottom: 0;
     cursor: pointer;
-    background: rgba(54, 79, 99, 0.61);
+    background: rgba(54, 79, 99, 0.6);
     .pro-inner {
       width: 100%;
       height: 100%;
-      background: rgb(234, 251, 1);
+      background: $barColor;
     }
   }
 }
@@ -146,7 +147,7 @@ body {
   top: 0;
   height: 545px;
   border-left: 1px solid #ccc;
-  background: rgba(238, 238, 238, 0.61);
+  background: rgba(255, 255, 255, 0.2);
   list-style: none;
   line-height: 20px;
   overflow: auto;
@@ -157,7 +158,6 @@ body {
     background: rgba(255,255,255,.6);
     height: 40px;
     padding: 4px 8px;
-    box-shadow: 0 2px 1px #ccc;
     margin: 4px;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -191,7 +191,7 @@ body {
     right: 0;
   }
   .playing {
-    border-left: 5px solid rgb(234, 251, 1);
+    border-left: 5px solid $barColor;
   }
 }
 
@@ -200,7 +200,7 @@ body {
   margin-right: 252px;
   overflow: auto;
   height: 525px;
-  background: rgba(238, 238, 238, 0.61);
+  background: rgba(255, 255, 255, 0.2);
   padding: 10px;
   transition: all .5s;
   li {

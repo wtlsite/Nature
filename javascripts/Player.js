@@ -62,6 +62,7 @@
 
         this.audio.addEventListener('error', function () {
             layer.msg('该音乐无法播放，请前往网易云音乐尝试');
+            _this.playNext();
         });
 
         this.audio.addEventListener('ended', function () {
