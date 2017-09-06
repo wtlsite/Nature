@@ -218,8 +218,9 @@
         layer.load(2, {shade: false});
         Bmob.Cloud.run('search', {name: key, offset: _this.offset}, {
             success: function (data) {
-                var res = JSON.parse(data);
                 layer.closeAll();
+                if(!data){return layer.msg('服务器原因未请求到数据，请联系作者')}
+                var res = JSON.parse(data);
                 if (res.code === 200 && res.result.songs) {//判断是否获取到搜索结果
                     res.result.songs.forEach(function (item) {
                         //过滤版权音乐
