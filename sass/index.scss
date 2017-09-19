@@ -1,18 +1,22 @@
 $back: rgba(0, 0, 0, .2);
-$barColor : #019dfb;
+$barColor: #c00;
 * {
   padding: 0;
   margin: 0;
 }
-::-webkit-scrollbar{
-  width:5px;
+
+::-webkit-scrollbar {
+  width: 5px;
 }
-::-webkit-scrollbar-track{
+
+::-webkit-scrollbar-track {
   background: $back;
 }
-::-webkit-scrollbar-thumb{
-  background: #000;
+
+::-webkit-scrollbar-thumb {
+  background: $barColor;
 }
+
 @font-face {
   font-family: 'iconfont';
   src: url('../icon/iconfont.eot');
@@ -30,10 +34,32 @@ $barColor : #019dfb;
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
+
 body {
   font-family: "Source Code Pro", sans-serif;
-  background-image: url("../img/bg.jpg");
-  background-size: cover;
+  background: #f0f0f0;
+}
+
+body .layer-skin .layui-layer-title {
+  background: $barColor;
+  color: #fff;
+  border: none;
+}
+
+.layui-layer-btn .layui-layer-btn0 {
+  border: 0;
+}
+
+body .layer-skin .layui-layer-btn {
+  border-top: 1px solid $barColor
+}
+
+body .layer-skin .layui-layer-btn a {
+  background: $barColor;
+}
+
+body .layer-skin .layui-layer-btn .layui-layer-btn1 {
+  background: #f0f0f0;
 }
 
 .player {
@@ -54,7 +80,7 @@ body {
   .controlPanel {
     height: 50px;
     line-height: 50px;
-    background: rgba(0,0,0,.6);
+    background: rgba(0, 0, 0, .9);
   }
   .progress {
     width: 100%;
@@ -85,12 +111,16 @@ body {
       line-height: 40px;
     }
   }
+  .control > .btn:hover {
+    color: $barColor;
+  }
   .lrc {
     float: left;
     width: 350px;
     height: 50px;
     text-align: center;
     color: #fff;
+    font-weight: bold;
     font-size: 12px;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -129,7 +159,7 @@ body {
   .listSwitch {
     color: #fff;
     cursor: pointer;
-    font-size:20px;
+    font-size: 20px;
     float: left;
   }
 }
@@ -138,6 +168,7 @@ body {
   height: 545px;
   overflow: hidden;
   position: relative;
+  background: #fff;
 }
 
 .playlist {
@@ -155,15 +186,16 @@ body {
   li {
     position: relative;
     border-radius: 2px;
-    background: rgba(255,255,255,.6);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 1px #333;
     height: 40px;
     padding: 4px 8px;
     margin: 4px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    &:hover{
-      &>.close{
+    &:hover {
+      & > .close {
         display: inline;
       }
     }
@@ -211,7 +243,7 @@ body {
     margin: 10px 18px;
     background: #fff;
     box-shadow: 0 0 8px #333;
-    transition:all .3s;
+    transition: all .3s;
     &:hover {
       transform: scale(1.1);
       & > .opt {

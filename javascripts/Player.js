@@ -390,10 +390,11 @@
         title: 'Nature Music通知',
         content: '本播放器内容来自网易云音乐，仅供学习使用。部分内容已隐藏，如有需要请前往网易云音乐。',
         closeBtn: 0,
+        skin:'layer-skin',
         btn: ['我知道了', '离开'],
         yes: function () {
             Bmob.initialize("22e84dbe507a583ba7d037d3603aa4be", "09a6501fabeb11218fe31b28317d8682");
-            var player = new Player(), list = ['玖月奇迹', '郑源', '唱响中国', '姚贝娜', '邓紫棋', '金玟岐', 'Coldplay', 'F.I.R'];
+            var player = new Player(), list = ['玖月奇迹', '姚贝娜', '谭晶', 'F.I.R','西游乐队','永动机'];
             player.search(list[Math.floor(Math.random() * list.length)]);
         },
         btn2: function () {
