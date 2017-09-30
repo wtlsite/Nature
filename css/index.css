@@ -25,7 +25,8 @@
 
 body {
   font-family: "Source Code Pro", sans-serif;
-  background: #f0f0f0; }
+  background: url("../img/bg.jpg");
+  background-size: cover; }
 
 body .layer-skin .layui-layer-title {
   background: #c00;
@@ -132,7 +133,7 @@ body .layer-skin .layui-layer-btn .layui-layer-btn1 {
   height: 545px;
   overflow: hidden;
   position: relative;
-  background: #fff; }
+  background: rgba(255, 255, 255, 0.3); }
 
 .playlist {
   width: 250px;
